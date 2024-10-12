@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/measure/index",
+    "pages/record/index",
+    "pages/login/index",
+    "pages/analyse/index",
+    "pages/collect/index",
+    "pages/bar/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "selectedIconPath": "./asstes/home_selected.png",
+      "iconPath": "./asstes/home.png"
+    }, {
+      "pagePath": "pages/analyse/index",
+      "text": "分析",
+      "selectedIconPath": "./asstes/record_selected.png",
+      "iconPath": "./asstes/record.png"
+    }, {
+      "pagePath": "pages/record/index",
+      "text": "历史记录",
+      "selectedIconPath": "./asstes/record_selected.png",
+      "iconPath": "./asstes/record.png"
+    }, {
+      "pagePath": "pages/bar/index",
+      "text": "折线图",
+      "selectedIconPath": "./asstes/record_selected.png",
+      "iconPath": "./asstes/record.png"
+    }],
+    "selectedColor": "#293c61"
+  }
+}

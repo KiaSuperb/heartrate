@@ -1,0 +1,54 @@
+<!--pages/measure/index.wxml-->
+<view class="camera_wrapper">
+  <view class="camera {{'camera_outline_' + color}}">
+    <camera device-position="back" flash="off" resolution="low" frame-size="small" />
+  </view>
+  <view class="instruction">
+    <text class="title">说明</text>
+    <text class="content" wx:if="{{!afterMeasure}}">正在测量中...请将手指覆盖相机并保持稳定。</text>
+    <text class="content" wx:else>测量已完成</text>
+  </view>
+</view>
+<view class="divider"></view>
+<view class="main">
+  <view class="ppg">
+    <canvas class="canvas" canvas-id="yueEle"></canvas>
+  </view>
+  <view class="timer" wx:if="{{!afterMeasure}}">
+    <text>计时器</text>
+    <!-- <view class="outer">
+      <view class="inner">
+        {{counter}}
+      </view>
+    </view> -->
+    <van-circle value="{{ value }}" color="{{ gradientColor }}" stroke-width="15" speed="10" size="160" text="{{counter}}" style="margin: 30rpx auto;"/>
+    <text class="note">请尝试放松并且自然地呼吸</text>
+  </view>
+  <view class="res" wx:else>
+    <view class="data_wrap">
+      <view class="data_text_wrap">
+        <view class="title">心率</view>
+        <view class="data"><text class="num">{{res.hr_avg}}</text><text>次/分</text></view>
+      </view>
+      <view class="data_text_wrap">
+        <view class="title">最低心率</view>
+        <view class="data"><text class="num">{{res.hr_min}}</text><text>次/分</text></view>
+      </view>
+      <view class="data_text_wrap">
+        <view class="title">最高心率</view>
+        <view class="data"><text class="num">{{res.hr_max}}</text><text>次/分</text></view>
+      </view>
+    </view>
+    <view class="data_wrap right">
+      <view class="data_text_wrap">
+        <view class="title">心率变异性</view>
+        <view class="data"><text class="num">{{res.hrv}}</text><text>毫秒</text></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="bottom_bar">
+  <view class="btn" bindtap="handleCancle" wx:if="{{!afterMeasure}}">取消</view>
+  <view class="btn" bindtap="nextOneStep" wx:else>下一步</view>
+</view>
