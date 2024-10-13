@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/bar/index",
-    "pages/lineset/index"
+    "pages/bar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,13 +21,8 @@
       "text": "折线图",
       "selectedIconPath": "./asstes/record_selected.png",
       "iconPath": "./asstes/record.png"
-    },
-    {
-      "pagePath": "pages/lineset/index",
-      "text": "折线",
-      "selectedIconPath": "./asstes/record_selected.png",
-      "iconPath": "./asstes/record.png"
-    }],
+    }
+    ],
     "selectedColor": "#293c61"
   }
 }
